@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Exclusive Store | Premium Athletic & Casual Footwear</title>
+  <meta name="description" content="Step into comfort and move with style. Discover the Campus Exclusive Store featured collection of premium athletic running sneakers, sports shoes, and casual slip-ons.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Razorpay Checkout SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+  <!-- Sticky Glassmorphic Header -->
+  <header>
+    <div class="container">
+      <div class="logo-wrapper">
+        <span class="logo-icon">C</span>
+        <span class="logo-text">CAMPUS<span class="text-teal">.</span></span>
+      </div>
+      
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#highlights">Why Us</a></li>
+          <li><a href="#shop">Explore Collection</a></li>
+          <li><a href="#about">About Brand</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Live Header Search -->
+        <div class="search-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="headerSearchInput" placeholder="Quick search...">
+        </div>
+
+        <!-- Google Login / User Profile -->
+        <!-- Google Login / User Profile -->
+    <div id="googleAuthContainer" class="google-auth-container">
+    
+    <!-- This element initializes the API client config data -->
+        <div id="g_id_onload"
+           data-client_id="384749496874-ch1fpkj01c3a3qle73akhj6r1eg1g7bc.apps.googleusercontent.com"
+           data-callback="handleCredentialResponse"
+           data-auto_prompt="false">
+        </div>
+    
+        <!-- This replaces your custom button; Google will automatically render its official button style here -->
+        <div class="g_id_signin" 
+           data-type="standard" 
+           data-size="large" 
+           data-theme="outline" 
+           data-text="sign_in_with">
+        </div>
+
+    </div>
+
+        <!-- Cart Icon Trigger -->
+        <button class="cart-trigger" id="cartTrigger" aria-label="Open Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#highlights">Why Us</a>
+    <a href="#shop">Explore Collection</a>
+    <a href="#about">About Brand</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag">Exclusive Brand Outlet</span>
+        <h1 class="hero-title">Step Into Comfort,<br>Move With Style</h1>
+        <p class="hero-desc">Discover premium performance footwear engineered for active athletes and everyday city life. Explore our latest sneaker drops designed for comfort and agility.</p>
+        
+        <div class="hero-ctas">
+          <a href="#shop" class="btn btn-primary">
+            Explore Collection
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#about" class="btn btn-secondary">Learn More</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h4>15K+</h4>
+            <p>Active Shoppers</p>
+          </div>
+          <div class="stat-item">
+            <h4>50+</h4>
+            <p>Store Outlets</p>
+          </div>
+          <div class="stat-item">
+            <h4>4.9/5</h4>
+            <p>Customer Rating</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <div class="hero-image-bg-glow"></div>
+        <img src="hero-sneaker.png" alt="Campus Premium Sneaker Hero Shot" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Propositions / Highlights -->
+  <section class="highlights-section" id="highlights">
+    <div class="container">
+      <div class="highlights-grid">
+        
+        <!-- Feature 1: Discounts -->
+        <div class="highlight-card teal">
+          <div class="highlight-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+          </div>
+          <h3>Attractive Discounts & Schemes</h3>
+          <p>Avail seasonal offers, student deals, and exclusive multi-buy schemes. Member subscriptions unlock a flat 15% discount on new drops.</p>
+        </div>
+
+        <!-- Feature 2: Quality -->
+        <div class="highlight-card orange">
+          <div class="highlight-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Premium Quality Guarantee</h3>
+          <p>We implement hyper-durable lightweight meshes, anti-shock support soles, and precision stitching backed by a 6-month product warranty.</p>
+        </div>
+
+        <!-- Feature 3: Support -->
+        <div class="highlight-card teal">
+          <div class="highlight-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <h3>Excellent In-Store & Online Support</h3>
+          <p>Whether shopping online or checking sizes at our digital physical outlets, receive 24/7 client support and seamless order tracking details.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Catalog Grid -->
+  <section class="shop-section" id="shop">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <div class="section-info">
+          <span class="section-subtitle">Featured Collection</span>
+          <h2 class="section-title">Engineered For Active Lifestyles</h2>
+        </div>
+      </div>
+
+      <!-- Live Filters and Search Tools -->
+      <div class="shop-controls">
+        <div class="filter-tabs" id="filterTabs">
+          <!-- Categories filled dynamically by JS -->
+        </div>
+
+        <div class="shop-search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="shopSearchInput" placeholder="Search sneakers by name or category...">
+        </div>
+
+        <div class="shop-sort">
+          <select id="shopSortSelect" aria-label="Sort products dropdown">
+            <option value="recommended">Recommended</option>
+            <option value="low-to-high">Price: Low to High</option>
+            <option value="high-to-low">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Dynamically populated by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Store Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <!-- Text content -->
+        <div class="about-content">
+          <span class="about-subtitle">The Outlet Story</span>
+          <h2 class="about-title">Pioneering Street Comfort</h2>
+          <p class="about-text">Campus Exclusive Store offers a state-of-the-art retail footwear experience. Designed for shoe enthusiasts and performance athletes alike, we merge urban-modern fashion styles with top-tier athletic technology.</p>
+          
+          <div class="about-features">
+            <div class="about-feat">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Breathable Knit Tech</span>
+            </div>
+            <div class="about-feat">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dynamic Flex Soles</span>
+            </div>
+            <div class="about-feat">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Eco-Friendly Sourcing</span>
+            </div>
+            <div class="about-feat">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Fast Outlet Exchanges</span>
+            </div>
+          </div>
+
+          <a href="#shop" class="btn btn-primary">Shop Latest Releases</a>
+        </div>
+
+        <!-- Graphic / Mock Image card -->
+        <div class="about-image-wrapper">
+          <div class="about-image-border"></div>
+          <div class="about-image-card">
+            <!-- Reuse generated image for store aesthetics -->
+            <img src="casual-classic.png" alt="Campus Engineering Close-up" style="max-height: 300px; transform: rotate(-10deg);">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: About brand -->
+        <div class="footer-col footer-about">
+          <div class="logo-wrapper">
+            <span class="logo-icon" style="background: linear-gradient(135deg, var(--pure-white), var(--active-teal)); -webkit-background-clip: text;">C</span>
+            <span class="logo-text">CAMPUS<span class="text-teal">.</span></span>
+          </div>
+          <p>Campus Exclusive Store is a premium shoe brand delivering high-quality, high-comfort sports and casual sneakers worldwide.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation link lists -->
+        <div class="footer-col">
+          <h3>Collections</h3>
+          <ul class="footer-links">
+            <li><a href="#shop">Running Shoes</a></li>
+            <li><a href="#shop">Athletic Training</a></li>
+            <li><a href="#shop">Casual Slip-Ons</a></li>
+            <li><a href="#shop">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Store Details -->
+        <div class="footer-col">
+          <h3>Campus Outlet</h3>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <div>
+              <p>42 Athletic Boulevard, Active District, Sector 7</p>
+              <!-- Directions locator link -->
+              <a href="https://maps.google.com" target="_blank" class="text-teal" style="font-size: 0.85rem; font-weight: 600;">Get Directions &rarr;</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div>
+              <p>Mon - Fri: 10:00 AM - 9:00 PM</p>
+              <p style="font-weight: 600; color: var(--pure-white);">Opens 10:30 AM Sat</p>
+              <p>Sun: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col">
+          <h3>Stay In The Loop</h3>
+          <p>Subscribe to receive news on drops, member-only discounts, and clearance schemes.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" id="newsletterEmail" placeholder="Enter your email" required aria-label="Email Address for Newsletter">
+            <button type="submit" class="newsletter-btn" aria-label="Submit Newsletter Form">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+          <div class="newsletter-status" id="newsletterStatus"></div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Campus Exclusive Store. Built for active comfort. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Size Chart</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer Modal Overlay -->
+  <div class="cart-drawer-overlay" id="cartOverlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <div class="cart-title-row">
+          <h2>Your Cart</h2>
+          <span class="text-muted" id="cartCountText">(0)</span>
+        </div>
+        <button class="cart-close-btn" id="cartClose" aria-label="Close Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Scrollable Cart Body -->
+      <div class="cart-body" id="cartItems">
+        <!-- Dynamically rendered -->
+      </div>
+
+      <!-- Pricing Summary & Actions -->
+      <div class="cart-footer">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Shipping</span>
+          <span id="cartShipping">$0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Estimated Tax (8%)</span>
+          <span id="cartTax">$0.00</span>
+        </div>
+        <div class="cart-summary-row total">
+          <span>Order Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        
+        <button class="cart-checkout-btn" id="checkoutBtn">Proceed To Checkout</button>
+        <p class="cart-footer-promo">Free standard shipping on orders over $150.00</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Quick View Modal Overlay -->
+  <div class="quickview-overlay" id="quickviewOverlay">
+    <div class="quickview-modal">
+      <button class="qv-close-btn" id="qvClose" aria-label="Close details modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <!-- Gallery Column -->
+      <div class="qv-gallery" id="qvGallery">
+        <!-- Main Product Image -->
+      </div>
+
+      <!-- Details Column -->
+      <div class="qv-details">
+        <span class="qv-category" id="qvCategory">RUNNING</span>
+        <h2 class="qv-name" id="qvName">Campus Apex-Run</h2>
+        
+        <div class="qv-rating-row">
+          <div class="qv-stars">
+            <!-- Star Icons -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <span class="qv-rating-text" id="qvRatingText">4.9 / 5 stars</span>
+        </div>
+
+        <div class="qv-price" id="qvPrice">$129.99</div>
+        <p class="qv-desc" id="qvDesc">Detailed description of the sneaker...</p>
+
+        <!-- Color Swatch selector -->
+        <h4 class="qv-selector-title">Select Color</h4>
+        <div class="qv-swatches" id="qvSwatches">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Size selector -->
+        <h4 class="qv-selector-title">Select US Size</h4>
+        <div class="qv-sizes" id="qvSizes">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="qv-actions">
+          <button class="qv-add-btn" id="qvAddBtn">Add To Shopping Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Simulator Modal Overlay -->
+  <div class="checkout-modal-overlay" id="checkoutOverlay">
+    <div class="checkout-modal" id="checkoutContainer">
+      <!-- Checkout Form dynamically restored here -->
+    </div>
+  </div>
+
+  <!-- Login Modal Overlay -->
+  <div class="login-modal-overlay" id="loginModalOverlay">
+    <div class="login-modal">
+      <button class="login-close-btn" id="loginModalClose" aria-label="Close login modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="login-modal-content">
+        <div class="login-logo">C</div>
+        <h3>Welcome to Campus</h3>
+        <p>Sign in to unlock exclusive flat 15% discount schemes, member perks, and auto-filled checkout details.</p>
+        
+        <!-- Google Sign-In button container -->
+        <div class="google-btn-wrapper">
+          <div id="googleSignInBtn"></div>
+        </div>
+
+        <span class="secure-text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Secure Auth via Google Identity Services
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container alerts -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Code -->
+  <script src="app.js"></script>
+</body>
+</html>

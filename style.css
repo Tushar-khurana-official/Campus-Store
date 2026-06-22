@@ -751,13 +751,41 @@ nav a.active::after {
 @media(min-width: 768px) {
   .shop-sort select { width: 200px; }
 }
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  /* 1. Make the container flex vertically instead of pushing sideways */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+  }
+  .shop-sort select { width: 200px; }
 
-/* Products Grid */
-.products-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  /* 2. Wrap the nav links nicely so they don't overflow */
+  .nav-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  /* 3. Center the Google Auth button wrapper */
+  .google-auth-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+  }
 }
+/* Products Grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
 @media(min-width: 640px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); }

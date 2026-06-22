@@ -751,6 +751,13 @@ nav a.active::after {
 @media(min-width: 768px) {
   .shop-sort select { width: 200px; }
 }
+
+@media (max-width: 768px) {
+  /* Hide the desktop inline links list on small screens */
+  .desktop-nav {
+    display: none;
+  }
+}
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
   /* 1. Make the container flex vertically instead of pushing sideways */
@@ -758,18 +765,21 @@ nav a.active::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 10px;
+    gap: 15px;
+    padding: 15px 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
-  .shop-sort select { width: 200px; }
+  
 
   /* 2. Wrap the nav links nicely so they don't overflow */
   .nav-actions {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     width: 100%;
+    align-items: center;
   }
 
   /* 3. Center the Google Auth button wrapper */
